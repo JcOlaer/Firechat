@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import './App.css';
+import configData from "./firebase-config.json";
 
 import firebase from 'firebase/app';
 import 'firebase/firestore';
@@ -9,14 +10,7 @@ import 'firebase/analytics';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 
-firebase.initializeApp({
-  apiKey: "AIzaSyD9LU-18n0zzlG2oeG0C7gTp9rWAmcKN6k",
-  authDomain: "firechat-7797c.firebaseapp.com",
-  projectId: "firechat-7797c",
-  storageBucket: "firechat-7797c.appspot.com",
-  messagingSenderId: "510824575893",
-  appId: "1:510824575893:web:82c3d2102ccb3aa80dbc9c"
-})
+firebase.initializeApp(configData);
 
 const auth = firebase.auth();
 const firestore = firebase.firestore();
@@ -30,7 +24,7 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1>🔥FireChat</h1>
+        <h1>⚛️🔥💬</h1>
         <SignOut />
       </header>
 
